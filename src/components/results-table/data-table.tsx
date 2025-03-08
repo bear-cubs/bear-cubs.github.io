@@ -63,7 +63,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="w-full">
-      <div className="flex items-start justify-baseline gap-2 py-4">
+      <div className="flex flex-col md:flex-row items-start justify-baseline gap-2 py-4">
         <MultiSelectFilter<TData> table={table} columnId="category" />
         <MultiSelectFilter<TData> table={table} columnId="model" />
         <Toggle
