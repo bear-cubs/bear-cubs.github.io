@@ -9,6 +9,7 @@ import {
   getFilteredRowModel,
   type SortingState,
   getSortedRowModel,
+  type VisibilityState,
 } from "@tanstack/react-table";
 
 import {
@@ -19,9 +20,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { MultiSelectFilter } from "./multi-select-filter";
+import { Toggle } from "../ui/toggle";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -34,6 +36,12 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+    "answer_label.correct": false,
+    "answer_label.wrong": false,
+    "answer_label.uncertain": false,
+    "answer_label.none": false,
+  });
 
   const table = useReactTable({
     data,
@@ -43,10 +51,13 @@ export function DataTable<TData, TValue>({
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
+    onColumnVisibilityChange: setColumnVisibility,
     state: {
       sorting,
       columnFilters,
+      columnVisibility,
     },
+
     enableColumnFilters: true,
   });
 
@@ -55,6 +66,16 @@ export function DataTable<TData, TValue>({
       <div className="flex items-start justify-baseline gap-2 py-4">
         <MultiSelectFilter<TData> table={table} columnId="category" />
         <MultiSelectFilter<TData> table={table} columnId="model" />
+        <Toggle
+          onClick={() => {
+            table.getColumn("answer_label.correct")?.toggleVisibility();
+            table.getColumn("answer_label.wrong")?.toggleVisibility();
+            table.getColumn("answer_label.uncertain")?.toggleVisibility();
+            table.getColumn("answer_label.none")?.toggleVisibility();
+          }}
+        >
+          Show answers
+        </Toggle>
       </div>
       <div className="rounded-md border">
         <Table>

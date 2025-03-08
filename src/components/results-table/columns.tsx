@@ -102,6 +102,8 @@ export const columns: ColumnDef<RowData>[] = [
   },
   {
     header: "Answer Label",
+    id: "answer_label",
+    enableHiding: true,
     columns: [
       {
         accessorFn: (row) => row.answer_label.correct,
