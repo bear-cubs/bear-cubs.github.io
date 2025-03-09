@@ -74,7 +74,7 @@ export function DataTable<TData, TValue>({
             table.getColumn("answer_label.none")?.toggleVisibility();
           }}
         >
-          Show answers
+          Show Answer Labels
         </Toggle>
       </div>
       <div className="rounded-md border">
