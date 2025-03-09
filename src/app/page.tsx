@@ -60,11 +60,14 @@ export default function Home() {
             </Button>
           }
         >
-          <div className="flex flex-col gap-4 p-4">
-            <Avatar className="w-48 h-48">
-              <AvatarImage src="/kthai.jpg" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
+          <div className="flex flex-row gap-4 p-4">
+            <div className="flex flex-col items-center justify-center gap-4">
+              <Avatar className="w-48 h-48">
+                <AvatarImage src="/kthai.jpg" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <p className="text-lg font-bold">Katherine Thai</p>
+            </div>
           </div>
         </CollapsibleSection>
       </div>
