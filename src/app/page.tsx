@@ -15,10 +15,10 @@ export default function Home() {
     // Main container
     <div className="w-full h-full flex flex-col items-center justify-baseline px-0 py-2 md:p-8">
       {/* Content Container */}
-      <div className="w-full flex flex-col gap-8 shadow-lg p-2 md:p-8 rounded-lg items-start justify-center">
-        <header className="w-full flex flex-col gap-4">
-          <div className="flex flex-row items-center justify-center gap-4">
-            <h1 className="text-6xl font-bold tracking-tight text-center">
+      <div className="w-full flex flex-col gap-4 md:gap-8 shadow-lg p-6 md:p-8 rounded-lg items-start justify-center pb-8">
+        <header className="w-full flex flex-col gap-2 md:gap-4">
+          <div className="flex flex-row items-center justify-center gap-2 md:gap-4">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-center">
               BearCubs
             </h1>
             <Image
@@ -26,9 +26,10 @@ export default function Home() {
               alt="Bearcubs Logo"
               width={100}
               height={100}
+              className="w-[64px] md:w-[100px] h-[64px] md:h-[100px]"
             />
           </div>
-          <div className="flex flex-row items-center justify-center gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-start md:justify-center gap-2 md:gap-4">
             <Button>Submit a question</Button>
             <Button>Submit an agent</Button>
             <Button asChild>
@@ -40,7 +41,7 @@ export default function Home() {
         <p className="text-lg text-muted-foreground">Bearcubs leaderboard</p>
         <DataTable columns={columns} data={parsedData} />
         <div className="w-full flex flex-col items-center justify-center gap-4">
-          <h2 className="p-6 text-3xl font-bold">Example Question</h2>
+          <h2 className="text-3xl font-bold">Example Question</h2>
           <Card className="p-4 w-max-w-[620px] flex flex-col items-center justify-center">
             <CardContent className="max-w-[620px]">
               <p className="text-lg text-muted-foreground">
