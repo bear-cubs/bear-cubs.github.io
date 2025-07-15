@@ -99,6 +99,28 @@ export default function Home() {
           </Card>
         </div>
         <div className="w-full flex flex-col items-center justify-center gap-4">
+          <h2 className="text-3xl font-bold">Gold Answer Access & Usage Policy</h2>
+          <Card className="p-4 w-max-w-[720px] flex flex-col items-center justify-center">
+            <CardContent>
+              <p className="text-md">
+                To maintain responsible use of our evaluation data, we do not publicly release the gold answers associated with this project. Researchers interested in accessing the gold answers may request them via email at <Link href="mailto:bearcubsteam@gmail.com" className="text-blue-500 hover:underline">bearcubsteam@gmail.com</Link>. Access will be granted on a case-by-case basis for non-commercial research purposes only.
+              </p>
+              <br />
+              <p className="text-md">Please note:</p>
+              <ul className="list-disc list-inside pl-4">
+                <li>Redistribution or open-sourcing of the gold answers is strictly prohibited.</li>
+                <li>By requesting access, you agree to use the answers solely for internal evaluation or research.</li>
+                <li>Any use of the gold answers must cite our work appropriately</li>
+              </ul>
+              <div className="mt-4 flex justify-center">
+                <Button asChild>
+                  <Link href="/bearcubs_autorater.zip" download>Download Autorater Code</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="w-full flex flex-col items-center justify-center gap-4">
           <h2 className="text-3xl font-bold">Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
             <div className="flex flex-col items-center justify-center gap-4">
@@ -147,7 +169,7 @@ export default function Home() {
         </div>
         <div className="w-full flex flex-col items-center justify-center gap-4">
           <Card className="p-4 w-max-w-[720px] flex flex-col items-center justify-center">
-            <p>Website last updated April 22, 2025</p>
+            <p>Website last updated July 15, 2025</p>
           </Card>
         </div>
 
