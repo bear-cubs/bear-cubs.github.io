@@ -161,6 +161,26 @@ export const bearCubsLeaderboard = [
   },
   {
     "category": "CU agents",
+    "model": "ChatGPT Agent (w/ GPT-4o)",
+    "accuracy": {
+      "all": "65.8%",
+      "text_only": "76.8%",
+      "multimodal": "54.5%"
+    },
+    "answer_label": {
+      "correct": "73",
+      "wrong": "30",
+      "uncertain": "3",
+      "none": "5"
+    },
+    "average_time": {
+      "correct": "9:16",
+      "wrong": "16:14",
+      "uncertain": "25:55"
+    }
+  },
+  {
+    "category": "CU agents",
     "model": "Convergence AI Proxy",
     "accuracy": {
       "all": "12.6%",
