@@ -221,7 +221,7 @@ export const bearCubsLeaderboard = [
   },
   {
     "category": "CU agents",
-    "model": "ChatGPT Agent (w/ GPT-4o)",
+    "model": "ChatGPT Agent",
     "accuracy": {
       "all": "65.8%",
       "text_only": "76.8%",
